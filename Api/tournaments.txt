@@ -1,0 +1,216 @@
+{
+  "name": "Champions Cup",
+  "date": "2025-01-14",
+  "gender": 0,
+  "players": [
+    {
+      "id": 1,
+      "name": "Lucas",
+      "lastName": "Pérez",
+      "gender": 0,
+      "skill": 85,
+      "strength": 78,
+      "speed": 80,
+      "reactionTime": 70
+    },
+    {
+      "id": 2,
+      "name": "Martín",
+      "lastName": "Gómez",
+      "gender": 0,
+      "skill": 75,
+      "strength": 82,
+      "speed": 76,
+      "reactionTime": 65
+    },
+    {
+      "id": 3,
+      "name": "Andrés",
+      "lastName": "Rodríguez",
+      "gender": 0,
+      "skill": 90,
+      "strength": 85,
+      "speed": 88,
+      "reactionTime": 72
+    },
+    {
+      "id": 4,
+      "name": "Carlos",
+      "lastName": "Fernández",
+      "gender": 0,
+      "skill": 78,
+      "strength": 80,
+      "speed": 82,
+      "reactionTime": 68
+    },
+    {
+      "id": 5,
+      "name": "Tomás",
+      "lastName": "López",
+      "gender": 0,
+      "skill": 82,
+      "strength": 77,
+      "speed": 85,
+      "reactionTime": 74
+    },
+    {
+      "id": 6,
+      "name": "Diego",
+      "lastName": "Sánchez",
+      "gender": 0,
+      "skill": 76,
+      "strength": 83,
+      "speed": 79,
+      "reactionTime": 67
+    },
+    {
+      "id": 7,
+      "name": "Sebastián",
+      "lastName": "Martínez",
+      "gender": 0,
+      "skill": 88,
+      "strength": 81,
+      "speed": 84,
+      "reactionTime": 71
+    },
+    {
+      "id": 8,
+      "name": "Matías",
+      "lastName": "Ruiz",
+      "gender": 0,
+      "skill": 80,
+      "strength": 79,
+      "speed": 81,
+      "reactionTime": 69
+    },
+    {
+      "id": 9,
+      "name": "Nicolás",
+      "lastName": "Díaz",
+      "gender": 0,
+      "skill": 83,
+      "strength": 86,
+      "speed": 87,
+      "reactionTime": 73
+    },
+    {
+      "id": 10,
+      "name": "Julián",
+      "lastName": "Morales",
+      "gender": 0,
+      "skill": 79,
+      "strength": 75,
+      "speed": 78,
+      "reactionTime": 66
+    }
+  ]
+}
+
+
+{
+  "name": "Women's Elite Cup",
+  "date": "2025-01-14",
+  "gender": 1,
+  "players": [
+    {
+      "id": 1,
+      "name": "Camila",
+      "lastName": "García",
+      "gender": 1,
+      "skill": 88,
+      "strength": 82,
+      "speed": 85,
+      "reactionTime": 72
+    },
+    {
+      "id": 2,
+      "name": "Valentina",
+      "lastName": "Martínez",
+      "gender": 1,
+      "skill": 80,
+      "strength": 78,
+      "speed": 83,
+      "reactionTime": 70
+    },
+    {
+      "id": 3,
+      "name": "Lucía",
+      "lastName": "Fernández",
+      "gender": 1,
+      "skill": 85,
+      "strength": 80,
+      "speed": 87,
+      "reactionTime": 74
+    },
+    {
+      "id": 4,
+      "name": "Sofía",
+      "lastName": "López",
+      "gender": 1,
+      "skill": 79,
+      "strength": 76,
+      "speed": 81,
+      "reactionTime": 68
+    },
+    {
+      "id": 5,
+      "name": "Julieta",
+      "lastName": "Díaz",
+      "gender": 1,
+      "skill": 83,
+      "strength": 79,
+      "speed": 86,
+      "reactionTime": 71
+    },
+    {
+      "id": 6,
+      "name": "Agustina",
+      "lastName": "Ruiz",
+      "gender": 1,
+      "skill": 77,
+      "strength": 81,
+      "speed": 79,
+      "reactionTime": 67
+    },
+    {
+      "id": 7,
+      "name": "Isabella",
+      "lastName": "Morales",
+      "gender": 1,
+      "skill": 90,
+      "strength": 84,
+      "speed": 88,
+      "reactionTime": 75
+    },
+    {
+      "id": 8,
+      "name": "Martina",
+      "lastName": "Sánchez",
+      "gender": 1,
+      "skill": 82,
+      "strength": 77,
+      "speed": 84,
+      "reactionTime": 69
+    },
+    {
+      "id": 9,
+      "name": "Victoria",
+      "lastName": "Pérez",
+      "gender": 1,
+      "skill": 86,
+      "strength": 85,
+      "speed": 89,
+      "reactionTime": 73
+    },
+    {
+      "id": 10,
+      "name": "Emilia",
+      "lastName": "Gómez",
+      "gender": 1,
+      "skill": 81,
+      "strength": 78,
+      "speed": 82,
+      "reactionTime": 70
+    }
+  ]
+}

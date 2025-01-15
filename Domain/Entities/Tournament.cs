@@ -1,50 +1,57 @@
-﻿using GeopagosChallenge.Enums;
-using GeopagosChallenge.Interfaces;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using GeopagosChallenge.Domain.Enums;
+using LiteDB;
 
 namespace GeopagosChallenge.Domain.Entities
 {
-  public class Tournament : ITournament
+  public class Tournament
   {
-    private readonly Player[] _players;
-    private readonly Match _match;
+    [BsonId]
     public int Id { get; set; }
+    public DateTime Date { get; set; } = DateTime.UtcNow;
     public string Name { get; set; }
-    public TournamentGenderEnum Gender { get; set; }
-
-    public Tournament(int id, string name, TournamentGenderEnum gender, Player[] players, Match match)
+    public GenderEnum Gender { get; set; }
+    public List<Player> Players { get; set; }
+    [NotMapped]
+    public Player? Winner { get; private set; } = null;
+    public Tournament(DateTime date, GenderEnum gender, string name, List<Player> players)
     {
-      Id = id;
-      Name = name;
+      Date = date;
       Gender = gender;
-      _players = players;
-      _match = new Match();
+      Name = name;
+      Players = players;
     }
 
     public Player GetWinner()
     {
-      List<Player> winners = _players.ToList();
+      List<Player> winners = Players.ToList();
 
-      int round = 0;
-
-      while (winners.Count() > 1)
+      while (winners.Count > 1)
       {
-        Player player1 = _players[round];
-        Player player2 = _players[round++];
-        Player winner = _match.GetMatchWinner(player1, player2);
+        List<Player> roundWinners = new List<Player>();
 
-        if (player1 == winner)
+        for (int i = 0; i < winners.Count; i += 2)
         {
-          winners.Remove(player2);
-        }
-        else
-        {
-          winners.Remove(player1);
+          if (i + 1 >= winners.Count)
+          {
+            roundWinners.Add(winners[i]);
+            break;
+          }
+
+          Player player1 = winners[i];
+          Player player2 = winners[i + 1];
+          Match match = new Match(player1, player2);
+          Player winner = match.GetMatchWinner();
+
+          roundWinners.Add(winner);
         }
 
-        round=+2;
+        winners = roundWinners;
       }
 
-      return winners.First();
+      Winner = winners.First();
+
+      return Winner;
     }
   }
 }

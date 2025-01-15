@@ -1,4 +1,4 @@
-﻿namespace GeopagosChallenge.Interfaces
+﻿namespace GeopagosChallenge.Domain.Interfaces
 {
   public interface IPlayer
   {
@@ -6,6 +6,9 @@
     string Name { get; set; }
     string LastName { get; set; }
     int Skill { get; set; }
+    int? Strength { get; set; }
+    int? Speed { get; set; }
+    int? ReactionTime { get; set; }
     string GetFullName();
   }
 }

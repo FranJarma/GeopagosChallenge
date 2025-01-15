@@ -1,36 +1,44 @@
-﻿using System;
-using GeopagosChallenge.Interfaces;
+﻿using GeopagosChallenge.Domain.Enums;
 
 namespace GeopagosChallenge.Domain.Entities
 {
   public class Match
   {
     private readonly Random random = new Random();
+    public Player Player1 { get; set; }
+    public Player Player2 { get; set; }
 
-    public Player GetMatchWinner(Player player1, Player player2)
+    public Match (Player player1, Player player2)
     {
-      double player1WinProbability = GetMatchWinProbability(player1);
-      double player2WinProbability = GetMatchWinProbability(player2);
+      Player1 = player1;
+      Player2 = player2;
+    }
 
-      return player1WinProbability >= player2WinProbability ? player1 : player2;
+    public Player GetMatchWinner()
+    {
+      double player1WinProbability = GetMatchWinProbability(Player1);
+      double player2WinProbability = GetMatchWinProbability(Player2);
+
+      return player1WinProbability >= player2WinProbability ? Player1 : Player2;
     }
 
     private double GetMatchWinProbability(Player player)
     {
       double playerLuck = random.NextDouble();
-      double winProbability = player.Skill * playerLuck;
+      double winProbability = 0.0;
 
-      if (player is MalePlayer manPlayer)
+      if (player.Gender == GenderEnum.Male)
       {
-        return winProbability * manPlayer.Force * manPlayer.Speed;
+        double maxMaleValue = player.Skill + player.Strength.Value + player.Speed.Value;
+        winProbability = (player.Skill + player.Strength.Value + player.Speed.Value) * playerLuck / maxMaleValue;
+      }
+      else if (player.Gender == GenderEnum.Female)
+      {
+        double maxFemaleValue = player.Skill + player.ReactionTime.Value;
+        winProbability = (player.Skill + player.ReactionTime.Value) * playerLuck / maxFemaleValue;
       }
 
-      else if (player is FemalePlayer womanPlayer)
-      {
-        return winProbability / womanPlayer.ReactionTime;
-      }
-
-      return winProbability;
+      return Math.Clamp(winProbability, 0.0, 1.0);
     }
   }
 }
